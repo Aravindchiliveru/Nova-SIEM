@@ -1,0 +1,15 @@
+FROM python:3.12.10-slim
+WORKDIR /opt/nova
+COPY requirements-lab.txt requirements-security.txt requirements-interop.txt requirements-aws.txt .
+ARG NOVA_WITH_AWS=0
+RUN pip install --no-cache-dir -r requirements-lab.txt -r requirements-security.txt -r requirements-interop.txt
+RUN if [ "$NOVA_WITH_AWS" = "1" ]; then pip install --no-cache-dir -r requirements-aws.txt; fi
+COPY nova ./nova
+COPY integrations ./integrations
+COPY rules ./rules
+COPY web ./web
+COPY deploy/postgres.sql deploy/clickhouse.sql ./deploy/
+RUN mkdir -p /var/lib/nova/archive && chown -R 10001:10001 /var/lib/nova
+USER 10001:10001
+ENV PYTHONUNBUFFERED=1
+CMD ["python", "-m", "nova.distributed.main", "gateway"]

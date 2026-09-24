@@ -1,0 +1,4 @@
+# Optional JWT and Ed25519 features; current upstream release selected 2026-09-20.
+# This pin could not be installed in the restricted build environment.
+# Executed crypto tests used the preinstalled cryptography 46.0.0; see VALIDATION.md.
+cryptography==50.0.1

@@ -1,0 +1,3 @@
+# Optional AWS adapters. Not installed/validated in the build runtime.
+# Resolve, lock and scan the complete dependency set before production deployment.
+boto3>=1.40,<2
