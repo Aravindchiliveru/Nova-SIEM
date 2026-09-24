@@ -1,0 +1,83 @@
+[
+  {
+    "scope": "Single-host real loopback HTTP, SQLite FULL WAL, four producers, two concurrent search clients; not distributed sizing",
+    "events": 10000,
+    "producer_threads": 4,
+    "search_threads": 2,
+    "ingress_seconds": 0.4472029549999661,
+    "complete_seconds": 3.819138063000082,
+    "completed_eps": 2618.391855712231,
+    "cpu_seconds": 6.536047826,
+    "max_rss_kib": 31516,
+    "ingest_batch_p95_ms": 26.140252000004693,
+    "search_requests": 212,
+    "search_p50_ms": 11.617656999987958,
+    "search_p95_ms": 17.263924999951996,
+    "search_p99_ms": 22.509675999799583,
+    "receive_to_normalize_p50_ms": 1270.6153392791748,
+    "receive_to_normalize_p95_ms": 3030.8735370635986,
+    "receive_to_normalize_p99_ms": 3245.3370094299316,
+    "counts": {
+      "raw_events": 10000,
+      "normalized": 10000,
+      "quarantine": 0,
+      "alerts": 21
+    },
+    "worker_error": false,
+    "python": "3.12.14"
+  },
+  {
+    "scope": "Single-host real loopback HTTP, SQLite FULL WAL, four producers, two concurrent search clients; not distributed sizing",
+    "events": 10000,
+    "producer_threads": 4,
+    "search_threads": 2,
+    "ingress_seconds": 2.7731928929999867,
+    "complete_seconds": 3.522573932000114,
+    "completed_eps": 2838.833248936811,
+    "cpu_seconds": 5.066063199999999,
+    "max_rss_kib": 31516,
+    "ingest_batch_p95_ms": 234.44846899997174,
+    "search_requests": 195,
+    "search_p50_ms": 10.650880999946821,
+    "search_p95_ms": 16.696186999979545,
+    "search_p99_ms": 32.151882000107435,
+    "receive_to_normalize_p50_ms": 506.43372535705566,
+    "receive_to_normalize_p95_ms": 1199.6667385101318,
+    "receive_to_normalize_p99_ms": 1252.777338027954,
+    "counts": {
+      "raw_events": 10000,
+      "normalized": 10000,
+      "quarantine": 0,
+      "alerts": 21
+    },
+    "worker_error": false,
+    "python": "3.12.14"
+  },
+  {
+    "scope": "Single-host real loopback HTTP, SQLite FULL WAL, four producers, two concurrent search clients; not distributed sizing",
+    "events": 10000,
+    "producer_threads": 4,
+    "search_threads": 2,
+    "ingress_seconds": 3.5146359840000514,
+    "complete_seconds": 3.6655105170000297,
+    "completed_eps": 2728.1329445439205,
+    "cpu_seconds": 5.133263709000001,
+    "max_rss_kib": 32648,
+    "ingest_batch_p95_ms": 190.21358099985264,
+    "search_requests": 198,
+    "search_p50_ms": 11.918484000034368,
+    "search_p95_ms": 19.161499000119875,
+    "search_p99_ms": 25.09144100008598,
+    "receive_to_normalize_p50_ms": 459.07044410705566,
+    "receive_to_normalize_p95_ms": 883.4526538848877,
+    "receive_to_normalize_p99_ms": 969.8643684387207,
+    "counts": {
+      "raw_events": 10000,
+      "normalized": 10000,
+      "quarantine": 0,
+      "alerts": 21
+    },
+    "worker_error": false,
+    "python": "3.12.14"
+  }
+]

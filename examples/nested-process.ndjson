@@ -1,0 +1,1 @@
+{"timestamp": "2026-09-22T00:00:00Z", "process": {"executable": "/bin/sh", "arguments": ["-c", "true"]}, "event": {"action": "start"}, "message": "Nested process event", "user": {"name": "alice"}}

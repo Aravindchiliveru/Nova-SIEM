@@ -1,0 +1,5 @@
+# Exact development dependency pins; not yet validated in this restricted runtime.
+confluent-kafka==2.8.2
+psycopg==3.2.6
+psycopg-binary==3.2.6
+typing_extensions==4.12.2

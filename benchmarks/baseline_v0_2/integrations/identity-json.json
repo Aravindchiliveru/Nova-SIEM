@@ -1,0 +1,8 @@
+{
+  "id": "identity-json", "version": "0.1.0", "format": "nova.mapping.v1",
+  "name": "Identity provider JSON",
+  "description": "Normalize a second sample identity contract through declarative fields. Not a certified cloud vendor integration.",
+  "mapping": {"time":"eventTime","actor":"principal","ip":"sourceIPAddress","outcome":"result","message":"eventName"},
+  "outcomes": {"ALLOW":"success","DENY":"failure"},
+  "fixtures": [{"input":{"eventTime":"2026-09-17T12:00:00+00:00","principal":"alice","sourceIPAddress":"2001:db8::1","result":"DENY","eventName":"ConsoleLogin"},"expected":{"actor":"alice","ip":"2001:db8::1","outcome":"failure"}}]
+}

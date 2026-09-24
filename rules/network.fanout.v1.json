@@ -1,0 +1,23 @@
+{
+  "id": "network.fanout.v1",
+  "title": "High network destination fan-out",
+  "severity": "medium",
+  "enabled": false,
+  "window_seconds": 300,
+  "threshold": 100,
+  "group_by": [
+    "source",
+    "host",
+    "ip"
+  ],
+  "match": {
+    "category": [
+      "network"
+    ],
+    "action": [
+      "connect"
+    ]
+  },
+  "description": "Review against local baselines before enabling. Exact Nova native fields; not a vendor rule or confirmed compromise.",
+  "distinct": "target"
+}

@@ -1,0 +1,72 @@
+{
+  "release": "0.5",
+  "scope": "Single-host SQLite FULL WAL; direct engine calls; five native categories; cloud rule enabled; synthetic data; not distributed or commercial comparison",
+  "python": "3.12.14",
+  "code_sha256": {
+    "nova/__init__.py": "8f1313bc36c59020de906eb3c32a3c8347cb532ea716bdfc584e3abb847568dc",
+    "nova/audit_checkpoint.py": "e5947d41d3aed5dbcfd9b485427ef0349337bde6b1b384ab8032e975e7faf8de",
+    "nova/cases.py": "e39ad68da85d2c2ecf6bafa436bc5ca8d09f3791222cd997fefd86e354ccee94",
+    "nova/collector.py": "1072d086c445d3a1cc11b41b4c3284d75b17406512a9528a2f9b0719659a0a00",
+    "nova/core.py": "06f8d4ecb920fdbd4045ab9921271327ecb0c67a021d1c93d49062e19f73636a",
+    "nova/correlation.py": "881ee838880d2f5d390f9efa9e56279e4dffd0d6876b75ad4a13707328136620",
+    "nova/distributed/__init__.py": "b3fb8de6bb203996e7cd61a9049d143a1109cf325eb8da231aeb7fcd5c0bbcd3",
+    "nova/distributed/archive.py": "6b7e6de52a746b2dfc4f13b37d0f3063ee07a43cc14f31a9bf0d1e60b9ff8010",
+    "nova/distributed/clients.py": "c8f3e3b2b906ab27ceaab51e76fc3eb7e2ac1871f249b40203c9436716fe6f48",
+    "nova/distributed/contracts.py": "5d7868d983774b1f5ee508137806ddeb03760b503c1464aeb576a3303009f99c",
+    "nova/distributed/main.py": "5fbd5b6b9b3c596357facd86b8615c6c69d28338570da8bd2beabf3465a85219",
+    "nova/distributed/metadata.py": "9b9241b635b3fbad319213672eb6b1090608f63a079320382e74bf824c1876db",
+    "nova/enterprise.py": "b8917e31851d892795d2b7c80b4ee32450973fc1f643643f2725b12958c09a25",
+    "nova/events.py": "c5a8cf19babece9aab9c41b784f4477fddfab2e041e55953bbaaa808c3def6ba",
+    "nova/evidence.py": "451ef24bcd604fcbddf556eec93c994ee8481f0ccc35e67bc309da9d9a8c4103",
+    "nova/identity.py": "a80b57f7c46104b7f6b80a8f58de4328cb1761418031d5cff19d608c7b429d80",
+    "nova/operations.py": "35bc26a68f346ed662f69b4a28d2d2e3ce2bdf6770c5bae126a0e3c0186e6e54",
+    "nova/packages.py": "563577e151ddb64730bd72b5426c07cc7cad4d913fea2d09c05ab91101de0e02",
+    "nova/rules.py": "3c590f4f5c775e5f04736ea4ee7b5291c63fb5230d510b371013f0ee1eb649e1",
+    "nova/server.py": "249414b9e2d9d613a0dfb5fc237bd5ef84e5a93b8fa24fddcd5f3a267a5f0850"
+  },
+  "runs": [
+    {
+      "events": 10000,
+      "counts": {
+        "raw_events": 10000,
+        "normalized": 10000,
+        "quarantine": 0,
+        "alerts": 100
+      },
+      "completed_seconds": 1.186742314000071,
+      "completed_eps": 8426.429126213327,
+      "cpu_seconds": 1.186770731,
+      "search_p95_ms": 2.002790999995341,
+      "process_max_rss_kib": 22340
+    },
+    {
+      "events": 10000,
+      "counts": {
+        "raw_events": 10000,
+        "normalized": 10000,
+        "quarantine": 0,
+        "alerts": 100
+      },
+      "completed_seconds": 1.1983962849999443,
+      "completed_eps": 8344.48514666454,
+      "cpu_seconds": 1.1983033739999998,
+      "search_p95_ms": 3.004034000014144,
+      "process_max_rss_kib": 22352
+    },
+    {
+      "events": 10000,
+      "counts": {
+        "raw_events": 10000,
+        "normalized": 10000,
+        "quarantine": 0,
+        "alerts": 100
+      },
+      "completed_seconds": 1.2096703629999865,
+      "completed_eps": 8266.714888508937,
+      "cpu_seconds": 1.2095506100000004,
+      "search_p95_ms": 2.1286889999601044,
+      "process_max_rss_kib": 22352
+    }
+  ],
+  "median_completed_eps": 8344.48514666454
+}

@@ -1,0 +1,1 @@
+{"logsource":{"category":"process_creation","product":"linux"},"match":{"category":["process"],"action":["start"],"source":["linux-agent"]},"fields":{"Image":"target","User":"actor"}}

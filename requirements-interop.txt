@@ -1,0 +1,2 @@
+# Tested import dependency in this runtime. AWS SDK is separately optional and unvalidated here.
+PyYAML==6.0.3

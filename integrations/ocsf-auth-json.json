@@ -1,0 +1,39 @@
+{
+  "id": "ocsf-auth-json",
+  "version": "0.6.0",
+  "format": "nova.ocsf.auth.v1",
+  "name": "OCSF authentication logon",
+  "description": "OCSF 1.4.0 class 3002 activity 1 projection; not full OCSF validation",
+  "mapping": {},
+  "fixtures": [
+    {
+      "input": {
+        "class_uid": 3002,
+        "category_uid": 3,
+        "activity_id": 1,
+        "type_uid": 300201,
+        "time": 1789992000000,
+        "severity_id": 1,
+        "status_id": 2,
+        "user": {
+          "name": "alice"
+        },
+        "src_endpoint": {
+          "ip": "192.0.2.1"
+        },
+        "metadata": {
+          "version": "1.4.0",
+          "product": {
+            "name": "Example",
+            "vendor_name": "Example"
+          }
+        }
+      },
+      "expected": {
+        "actor": "alice",
+        "category": "authentication",
+        "outcome": "failure"
+      }
+    }
+  ]
+}

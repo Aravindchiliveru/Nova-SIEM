@@ -1,0 +1,16 @@
+{
+  "scope": "Compiler acceptance only; not semantic corpus parity or conformance certification",
+  "binding_sha256": "8219f1a5bc66cb9b5b4aee96fc0ceb6c02843b0d6954dfc311a15c2e7765c8ce",
+  "total": 1,
+  "compiled": 1,
+  "rejected": 0,
+  "rules": [
+    {
+      "path": "shell.yml",
+      "sha256": "f62fcad1ad275d55e1f5279106c864437970093824dea320aed1fb5c63eb74f0",
+      "status": "compiled",
+      "rule_id": "sigma.42b9e66ae9516fa0b48522690c007562",
+      "compiled_sha256": "32cb0213e5cba91808f53bcb6a0f43547ac7ebddbb39df69a59fde4738c4796e"
+    }
+  ]
+}

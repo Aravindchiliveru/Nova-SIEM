@@ -1,0 +1,104 @@
+{
+  "id": "nested-process-json",
+  "version": "0.8.0",
+  "format": "nova.mapping.v3",
+  "category": "process",
+  "name": "Nested process JSON",
+  "description": "Schema-validated nested process mapping",
+  "mapping": {
+    "time": "timestamp",
+    "action": "event.action",
+    "target": "process.executable",
+    "actor": "user.name",
+    "message": "message"
+  },
+  "schema": {
+    "type": "object",
+    "required": [
+      "timestamp",
+      "process",
+      "event",
+      "message",
+      "user"
+    ],
+    "properties": {
+      "timestamp": {
+        "type": "string"
+      },
+      "process": {
+        "type": "object",
+        "required": [
+          "executable"
+        ],
+        "properties": {
+          "executable": {
+            "type": "string",
+            "max_length": 8192
+          },
+          "arguments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "max_items": 256
+          }
+        }
+      },
+      "event": {
+        "type": "object",
+        "required": [
+          "action"
+        ],
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "start",
+              "stop"
+            ]
+          }
+        }
+      },
+      "message": {
+        "type": "string"
+      },
+      "user": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "max_length": 256
+          }
+        }
+      }
+    }
+  },
+  "fixtures": [
+    {
+      "input": {
+        "timestamp": "2026-09-22T00:00:00Z",
+        "process": {
+          "executable": "/bin/sh",
+          "arguments": [
+            "-c",
+            "true"
+          ]
+        },
+        "event": {
+          "action": "start"
+        },
+        "message": "Nested process event",
+        "user": {
+          "name": "alice"
+        }
+      },
+      "expected": {
+        "category": "process",
+        "target": "/bin/sh"
+      }
+    }
+  ]
+}

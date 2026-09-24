@@ -1,0 +1,1 @@
+{"response-service":{"url":"https://response.example/actions","token_file":"/run/secrets/response-token","tenants":["demo"]}}

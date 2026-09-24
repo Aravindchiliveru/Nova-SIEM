@@ -1,0 +1,11 @@
+title: Shell execution outside root account
+logsource:
+  category: process_creation
+  product: linux
+detection:
+  shell:
+    Image|endswith: /sh
+  root:
+    User: root
+  condition: shell and not root
+level: medium

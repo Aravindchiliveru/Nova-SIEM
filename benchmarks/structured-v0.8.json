@@ -1,0 +1,13 @@
+{
+  "scope": "Single local SQLite process; no HTTP, concurrent clients, remote storage or cluster",
+  "events": 3000,
+  "ingest_and_drain_seconds": 0.3060786510000071,
+  "completed_eps": 9801.402319954457,
+  "cpu_seconds": 0.306092638,
+  "max_rss_kib": 22056,
+  "queries": 100,
+  "returned_per_query": 300,
+  "search_p50_ms": 6.614699499948529,
+  "search_p95_ms": 10.836317999974199,
+  "lossless_document_checks_passed": true
+}

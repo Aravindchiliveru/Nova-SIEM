@@ -1,0 +1,5 @@
+{
+  "status": "not_run",
+  "reason": "Use a dedicated test bucket; --execute-isolated-probe writes a COMPLIANCE object that persists until expiry",
+  "remote_enforcement_independently_proven": false
+}

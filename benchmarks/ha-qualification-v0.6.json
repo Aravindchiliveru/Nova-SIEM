@@ -1,0 +1,5 @@
+{
+  "status": "not_run",
+  "reason": "Fault execution requires explicit --execute-faults and operator-reviewed isolated test deployment",
+  "production_ha_dr_proven": false
+}

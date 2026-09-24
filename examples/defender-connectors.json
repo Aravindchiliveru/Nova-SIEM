@@ -1,0 +1,9 @@
+{
+  "defender-lab": {
+    "kind": "defender",
+    "url": "https://api.security.microsoft.com",
+    "token_file": "/run/secrets/defender-access-token",
+    "tenants": ["lab"],
+    "assets": {"lab": ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"]}
+  }
+}

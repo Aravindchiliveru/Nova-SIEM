@@ -1,0 +1,21 @@
+{
+  "id": "auth.failures.v1",
+  "title": "Repeated authentication failures",
+  "severity": "medium",
+  "enabled": true,
+  "window_seconds": 300,
+  "threshold": 5,
+  "group_by": [
+    "source",
+    "actor",
+    "ip"
+  ],
+  "match": {
+    "outcome": [
+      "failure"
+    ],
+    "category": [
+      "authentication"
+    ]
+  }
+}

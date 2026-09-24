@@ -1,0 +1,40 @@
+{
+  "id": "cloud-json",
+  "version": "0.5.0",
+  "format": "nova.mapping.v2",
+  "category": "cloud",
+  "name": "Cloud JSON",
+  "description": "Nova native flat JSON contract; not a native vendor collector.",
+  "mapping": {
+    "time": "timestamp",
+    "action": "action",
+    "target": "target",
+    "message": "message",
+    "actor": "actor",
+    "ip": "src_ip",
+    "host": "host",
+    "outcome": "outcome"
+  },
+  "fixtures": [
+    {
+      "input": {
+        "timestamp": "2026-09-21T12:00:00Z",
+        "action": "GetObject",
+        "target": "example-bucket",
+        "message": "cloud activity"
+      },
+      "expected": {
+        "category": "cloud",
+        "target": "example-bucket",
+        "outcome": "unknown",
+        "ip": ""
+      }
+    }
+  ],
+  "optional": [
+    "actor",
+    "ip",
+    "host",
+    "outcome"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "gateway": "https://qualification.example",
+  "admin_token_file": "/run/secrets/qualification-admin",
+  "collector_token_file": "/run/secrets/qualification-collector",
+  "rto_seconds": 120,
+  "scenarios": [
+    {
+      "name": "gateway_loss",
+      "inject_argv": [
+        "REPLACE_WITH_REVIEWED_FAULT_COMMAND",
+        "gateway_loss"
+      ],
+      "recover_argv": [
+        "REPLACE_WITH_REVIEWED_RECOVERY_COMMAND",
+        "gateway_loss"
+      ],
+      "verify_gateway": "https://qualification.example",
+      "verify_fault_argv": [
+        "/operator/bin/verify-fault-or-isolated-restore",
+        "gateway_loss"
+      ]
+    },
+    {
+      "name": "broker_loss",
+      "inject_argv": [
+        "REPLACE_WITH_REVIEWED_FAULT_COMMAND",
+        "broker_loss"
+      ],
+      "recover_argv": [
+        "REPLACE_WITH_REVIEWED_RECOVERY_COMMAND",
+        "broker_loss"
+      ],
+      "verify_gateway": "https://qualification.example",
+      "verify_fault_argv": [
+        "/operator/bin/verify-fault-or-isolated-restore",
+        "broker_loss"
+      ]
+    },
+    {
+      "name": "metadata_primary_loss",
+      "inject_argv": [
+        "REPLACE_WITH_REVIEWED_FAULT_COMMAND",
+        "metadata_primary_loss"
+      ],
+      "recover_argv": [
+        "REPLACE_WITH_REVIEWED_RECOVERY_COMMAND",
+        "metadata_primary_loss"
+      ],
+      "verify_gateway": "https://qualification.example",
+      "verify_fault_argv": [
+        "/operator/bin/verify-fault-or-isolated-restore",
+        "metadata_primary_loss"
+      ]
+    },
+    {
+      "name": "analytics_replica_loss",
+      "inject_argv": [
+        "REPLACE_WITH_REVIEWED_FAULT_COMMAND",
+        "analytics_replica_loss"
+      ],
+      "recover_argv": [
+        "REPLACE_WITH_REVIEWED_RECOVERY_COMMAND",
+        "analytics_replica_loss"
+      ],
+      "verify_gateway": "https://qualification.example",
+      "verify_fault_argv": [
+        "/operator/bin/verify-fault-or-isolated-restore",
+        "analytics_replica_loss"
+      ]
+    },
+    {
+      "name": "isolated_restore",
+      "inject_argv": [
+        "REPLACE_WITH_REVIEWED_FAULT_COMMAND",
+        "isolated_restore"
+      ],
+      "recover_argv": [
+        "REPLACE_WITH_REVIEWED_RECOVERY_COMMAND",
+        "isolated_restore"
+      ],
+      "verify_gateway": "https://restore.example",
+      "verify_fault_argv": [
+        "/operator/bin/verify-fault-or-isolated-restore",
+        "isolated_restore"
+      ]
+    }
+  ]
+}

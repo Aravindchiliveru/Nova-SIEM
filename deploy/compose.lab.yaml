@@ -1,0 +1,110 @@
+name: nova-lab
+x-env: &env
+  NOVA_POSTGRES_DSN: postgresql://nova:${POSTGRES_PASSWORD}@postgres:5432/nova
+  NOVA_CLICKHOUSE_URL: http://clickhouse:8123
+  NOVA_CLICKHOUSE_USER: nova
+  NOVA_CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD}
+  NOVA_KAFKA_BOOTSTRAP: kafka:9092
+  NOVA_BIND_ADDRESS: 0.0.0.0
+  NOVA_CREDENTIALS_FILE: /run/nova/credentials.json
+  NOVA_ARCHIVE_DIRECTORY: /var/lib/nova/archive
+x-worker: &worker
+  build:
+    context: ..
+    dockerfile: Dockerfile.lab
+  environment: *env
+  restart: "on-failure:5"
+  depends_on:
+    initialize:
+      condition: service_completed_successfully
+services:
+  postgres:
+    image: postgres:17.6
+    environment:
+      POSTGRES_DB: nova
+      POSTGRES_USER: nova
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports: ["127.0.0.1:15432:5432"]
+    volumes: ["postgres-data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nova -d nova"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+  clickhouse:
+    image: clickhouse/clickhouse-server:25.8.1.5101
+    environment:
+      CLICKHOUSE_USER: nova
+      CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD}
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: "1"
+    ports: ["127.0.0.1:18123:8123"]
+    volumes: ["clickhouse-data:/var/lib/clickhouse"]
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://127.0.0.1:8123/ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+  kafka:
+    image: apache/kafka:4.1.1
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: INTERNAL://:9092,EXTERNAL://:19092,CONTROLLER://:9093
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:9092,EXTERNAL://127.0.0.1:19092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
+      KAFKA_LOG_DIRS: /var/lib/kafka/data
+      CLUSTER_ID: MkU3OEVBNTcwNTJENDM2Qk
+    ports: ["127.0.0.1:19092:19092"]
+    volumes: ["kafka-data:/var/lib/kafka/data"]
+    healthcheck:
+      test: ["CMD", "/opt/kafka/bin/kafka-broker-api-versions.sh", "--bootstrap-server", "kafka:9092"]
+      interval: 5s
+      timeout: 10s
+      retries: 30
+  initialize:
+    build:
+      context: ..
+      dockerfile: Dockerfile.lab
+    environment: *env
+    command: ["python", "-m", "nova.distributed.main", "init"]
+    depends_on:
+      postgres: {condition: service_healthy}
+      clickhouse: {condition: service_healthy}
+      kafka: {condition: service_healthy}
+  gateway:
+    <<: *worker
+    command: ["python", "-m", "nova.distributed.main", "gateway"]
+    ports: ["127.0.0.1:8787:8787"]
+    volumes: ["./.lab/credentials.json:/run/nova/credentials.json:ro"]
+  relay:
+    <<: *worker
+    command: ["python", "-m", "nova.distributed.main", "relay"]
+  normalizer:
+    <<: *worker
+    command: ["python", "-m", "nova.distributed.main", "normalizer"]
+  indexer:
+    <<: *worker
+    command: ["python", "-m", "nova.distributed.main", "indexer"]
+  detector:
+    <<: *worker
+    command: ["python", "-m", "nova.distributed.main", "detector"]
+  quarantine:
+    <<: *worker
+    command: ["python", "-m", "nova.distributed.main", "quarantine"]
+  archive:
+    <<: *worker
+    command: ["python", "-m", "nova.distributed.main", "archive"]
+    volumes: ["archive-data:/var/lib/nova/archive"]
+volumes:
+  postgres-data:
+  clickhouse-data:
+  kafka-data:
+  archive-data:

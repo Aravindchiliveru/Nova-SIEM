@@ -1,0 +1,83 @@
+[
+  {
+    "scope": "Single-host real loopback HTTP, SQLite FULL WAL, four producers, two concurrent search clients; not distributed sizing",
+    "events": 10000,
+    "producer_threads": 4,
+    "search_threads": 2,
+    "ingress_seconds": 2.427453759999935,
+    "complete_seconds": 2.9786222780001026,
+    "completed_eps": 3357.2568344295637,
+    "cpu_seconds": 3.98394549,
+    "max_rss_kib": 29712,
+    "ingest_batch_p95_ms": 189.75180200004615,
+    "search_requests": 181,
+    "search_p50_ms": 7.54914899994219,
+    "search_p95_ms": 13.050212000052852,
+    "search_p99_ms": 18.259018999970067,
+    "receive_to_normalize_p50_ms": 426.8062114715576,
+    "receive_to_normalize_p95_ms": 937.1523857116699,
+    "receive_to_normalize_p99_ms": 997.8528022766113,
+    "counts": {
+      "raw_events": 10000,
+      "normalized": 10000,
+      "quarantine": 0,
+      "alerts": 21
+    },
+    "worker_error": false,
+    "python": "3.12.14"
+  },
+  {
+    "scope": "Single-host real loopback HTTP, SQLite FULL WAL, four producers, two concurrent search clients; not distributed sizing",
+    "events": 10000,
+    "producer_threads": 4,
+    "search_threads": 2,
+    "ingress_seconds": 1.9163787219999904,
+    "complete_seconds": 3.0359622779999427,
+    "completed_eps": 3293.8485673767614,
+    "cpu_seconds": 4.509115734000001,
+    "max_rss_kib": 30080,
+    "ingest_batch_p95_ms": 183.1205979999595,
+    "search_requests": 181,
+    "search_p50_ms": 8.88909400009652,
+    "search_p95_ms": 13.916097999981503,
+    "search_p99_ms": 15.369992999922033,
+    "receive_to_normalize_p50_ms": 456.91895484924316,
+    "receive_to_normalize_p95_ms": 818.7377452850342,
+    "receive_to_normalize_p99_ms": 991.9238090515137,
+    "counts": {
+      "raw_events": 10000,
+      "normalized": 10000,
+      "quarantine": 0,
+      "alerts": 21
+    },
+    "worker_error": false,
+    "python": "3.12.14"
+  },
+  {
+    "scope": "Single-host real loopback HTTP, SQLite FULL WAL, four producers, two concurrent search clients; not distributed sizing",
+    "events": 10000,
+    "producer_threads": 4,
+    "search_threads": 2,
+    "ingress_seconds": 2.503189030000158,
+    "complete_seconds": 2.8628516600001603,
+    "completed_eps": 3493.020661782888,
+    "cpu_seconds": 3.815896422,
+    "max_rss_kib": 30080,
+    "ingest_batch_p95_ms": 58.09153700010938,
+    "search_requests": 177,
+    "search_p50_ms": 7.828439999912007,
+    "search_p95_ms": 12.31464300008156,
+    "search_p99_ms": 14.42747800001598,
+    "receive_to_normalize_p50_ms": 717.4475193023682,
+    "receive_to_normalize_p95_ms": 1629.5626163482666,
+    "receive_to_normalize_p99_ms": 1750.3552436828613,
+    "counts": {
+      "raw_events": 10000,
+      "normalized": 10000,
+      "quarantine": 0,
+      "alerts": 21
+    },
+    "worker_error": false,
+    "python": "3.12.14"
+  }
+]

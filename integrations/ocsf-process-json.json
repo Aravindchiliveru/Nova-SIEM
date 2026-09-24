@@ -1,0 +1,50 @@
+{
+  "id": "ocsf-process-json",
+  "version": "0.8.0",
+  "format": "nova.ocsf.system.v1",
+  "name": "OCSF process projection",
+  "description": "Nova 1.4.0 activity-1 projection profile; not full OCSF conformance",
+  "mapping": {},
+  "fixtures": [
+    {
+      "input": {
+        "class_uid": 1007,
+        "category_uid": 1,
+        "activity_id": 1,
+        "type_uid": 100701,
+        "time": 1789992000000,
+        "severity_id": 1,
+        "status_id": 1,
+        "metadata": {
+          "version": "1.4.0",
+          "product": {
+            "name": "Example",
+            "vendor_name": "Example"
+          }
+        },
+        "actor": {
+          "user": {
+            "name": "alice"
+          }
+        },
+        "device": {
+          "hostname": "lab-host"
+        },
+        "message": "Synthetic profile event",
+        "process": {
+          "file": {
+            "path": "/usr/bin/bash",
+            "type_id": 1
+          },
+          "pid": 42,
+          "cmd_line": "bash -c true"
+        }
+      },
+      "expected": {
+        "category": "process",
+        "target": "/usr/bin/bash"
+      }
+    }
+  ],
+  "class_uid": 1007
+}

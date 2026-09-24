@@ -1,0 +1,26 @@
+{
+  "ingress": {
+    "accepted_before_kill": 500,
+    "normalized_after_restart": 500,
+    "alerts": 1,
+    "uncommitted_transaction_rolled_back": true,
+    "integrity": "ok",
+    "scope": "process SIGKILL only; not power loss, disk failure, or distributed broker recovery"
+  },
+  "external_action": {
+    "real_sigkill": true,
+    "provider_effects": 1,
+    "attempts": 2,
+    "recovered_state": "completed",
+    "lease_clock_advanced_seconds": 61,
+    "scope": "Local durable provider simulator; idempotency honored. No real containment vendor."
+  },
+  "restore": {
+    "normalized": 5,
+    "completed_external_jobs": 1,
+    "audit_checkpoint_verified": true,
+    "scope": "SQLite-only isolated snapshot restore"
+  },
+  "recovery_and_restore_seconds": 0.06439217700005884,
+  "production_ha_dr_proven": false
+}

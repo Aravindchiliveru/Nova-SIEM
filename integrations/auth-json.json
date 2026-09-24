@@ -1,0 +1,8 @@
+{
+  "id": "auth-json", "version": "0.1.0", "format": "nova.mapping.v1",
+  "name": "Authentication JSON",
+  "description": "Normalize a documented authentication JSON contract. This is not a native Windows or Linux collector.",
+  "mapping": {"time":"timestamp","actor":"user","ip":"src_ip","outcome":"status","message":"message"},
+  "outcomes": {"success":"success","failure":"failure"},
+  "fixtures": [{"input":{"timestamp":"2026-09-17T12:00:00Z","user":"alice","src_ip":"192.0.2.10","status":"failure","message":"Login denied"},"expected":{"actor":"alice","ip":"192.0.2.10","outcome":"failure"}}]
+}

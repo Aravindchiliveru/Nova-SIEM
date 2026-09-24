@@ -1,0 +1,40 @@
+{
+  "id": "network-json",
+  "version": "0.5.0",
+  "format": "nova.mapping.v2",
+  "category": "network",
+  "name": "Network JSON",
+  "description": "Nova native flat JSON contract; not a native vendor collector.",
+  "mapping": {
+    "time": "timestamp",
+    "action": "action",
+    "target": "target",
+    "message": "message",
+    "actor": "actor",
+    "ip": "src_ip",
+    "host": "host",
+    "outcome": "outcome"
+  },
+  "fixtures": [
+    {
+      "input": {
+        "timestamp": "2026-09-21T12:00:00Z",
+        "action": "connect",
+        "target": "192.0.2.20:443",
+        "message": "network activity"
+      },
+      "expected": {
+        "category": "network",
+        "target": "192.0.2.20:443",
+        "outcome": "unknown",
+        "ip": ""
+      }
+    }
+  ],
+  "optional": [
+    "actor",
+    "ip",
+    "host",
+    "outcome"
+  ]
+}

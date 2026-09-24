@@ -1,0 +1,101 @@
+{
+  "scope": "Local Engine/SQLite FULL WAL; 5000 synthetic records, 50 entities, three runs each. Fixed rules versus fixed+sliding+sequence. Not a distributed or commercial-SIEM comparison.",
+  "runs": [
+    {
+      "advanced_rules_enabled": false,
+      "events": 5000,
+      "seconds": 3.0803215009999576,
+      "eps": 1623.20718742406,
+      "cpu_seconds": 3.0778554049999998,
+      "alerts_by_rule": {
+        "auth.failures.v1": 50,
+        "auth.password-spray.v1": 1
+      },
+      "audit_records_verified": 11
+    },
+    {
+      "advanced_rules_enabled": true,
+      "events": 5000,
+      "seconds": 4.175313149999965,
+      "eps": 1197.5149696257013,
+      "cpu_seconds": 4.17481416,
+      "alerts_by_rule": {
+        "auth.failure-then-success.v1": 500,
+        "auth.failures.v1": 50,
+        "auth.password-spray.v1": 1,
+        "auth.sliding-failures.v1": 4300
+      },
+      "audit_records_verified": 13
+    },
+    {
+      "advanced_rules_enabled": false,
+      "events": 5000,
+      "seconds": 3.237044922999985,
+      "eps": 1544.61866268021,
+      "cpu_seconds": 3.2267685540000004,
+      "alerts_by_rule": {
+        "auth.failures.v1": 50,
+        "auth.password-spray.v1": 1
+      },
+      "audit_records_verified": 11
+    },
+    {
+      "advanced_rules_enabled": true,
+      "events": 5000,
+      "seconds": 4.039471341999956,
+      "eps": 1237.7857339927266,
+      "cpu_seconds": 4.038247175,
+      "alerts_by_rule": {
+        "auth.failure-then-success.v1": 500,
+        "auth.failures.v1": 50,
+        "auth.password-spray.v1": 1,
+        "auth.sliding-failures.v1": 4300
+      },
+      "audit_records_verified": 13
+    },
+    {
+      "advanced_rules_enabled": false,
+      "events": 5000,
+      "seconds": 2.9997229699999934,
+      "eps": 1666.8205864356903,
+      "cpu_seconds": 2.998938483,
+      "alerts_by_rule": {
+        "auth.failures.v1": 50,
+        "auth.password-spray.v1": 1
+      },
+      "audit_records_verified": 11
+    },
+    {
+      "advanced_rules_enabled": true,
+      "events": 5000,
+      "seconds": 4.001417182999944,
+      "eps": 1249.5572871637937,
+      "cpu_seconds": 4.001413663000001,
+      "alerts_by_rule": {
+        "auth.failure-then-success.v1": 500,
+        "auth.failures.v1": 50,
+        "auth.password-spray.v1": 1,
+        "auth.sliding-failures.v1": 4300
+      },
+      "audit_records_verified": 13
+    }
+  ],
+  "workflows": {
+    "workflows": 50,
+    "steps": 150,
+    "seconds": 0.1180754890000344,
+    "steps_per_second": 1270.3737352293015,
+    "notes": 50,
+    "scope": "Internal transactional database actions, one shared case, no external API latency"
+  },
+  "median_eps": {
+    "False": 1623.20718742406,
+    "True": 1237.7857339927266
+  },
+  "max_process_rss_kib": 20228,
+  "code_sha256": {
+    "enterprise.py": "b8917e31851d892795d2b7c80b4ee32450973fc1f643643f2725b12958c09a25",
+    "correlation.py": "881ee838880d2f5d390f9efa9e56279e4dffd0d6876b75ad4a13707328136620",
+    "rules.py": "3c590f4f5c775e5f04736ea4ee7b5291c63fb5230d510b371013f0ee1eb649e1"
+  }
+}

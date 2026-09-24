@@ -1,0 +1,22 @@
+{
+  "id": "cloud.logging-disabled.v1",
+  "title": "Cloud audit logging disabled",
+  "severity": "high",
+  "enabled": false,
+  "window_seconds": 300,
+  "threshold": 1,
+  "group_by": [
+    "source",
+    "target"
+  ],
+  "match": {
+    "category": [
+      "cloud"
+    ],
+    "action": [
+      "StopLogging",
+      "DeleteTrail"
+    ]
+  },
+  "description": "Review against local baselines before enabling. Exact Nova native fields; not a vendor rule or confirmed compromise."
+}

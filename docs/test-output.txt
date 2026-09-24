@@ -1,0 +1,52 @@
+test_api_flow_and_isolation (test_api.APITests.test_api_flow_and_isolation) ... ok
+test_auth_required (test_api.APITests.test_auth_required) ... ok
+test_collector_cannot_search (test_api.APITests.test_collector_cannot_search) ... ok
+test_cross_origin_denied (test_api.APITests.test_cross_origin_denied) ... ok
+test_dns_rebinding_host_denied (test_api.APITests.test_dns_rebinding_host_denied) ... ok
+test_duplicate_json_keys_rejected (test_api.APITests.test_duplicate_json_keys_rejected) ... ok
+test_duplicate_query_parameters_rejected (test_api.APITests.test_duplicate_query_parameters_rejected) ... ok
+test_invalid_action_input (test_api.APITests.test_invalid_action_input) ... ok
+test_metrics_require_identity (test_api.APITests.test_metrics_require_identity) ... ok
+test_nonfinite_json_rejected (test_api.APITests.test_nonfinite_json_rejected) ... ok
+test_oversized_request (test_api.APITests.test_oversized_request) ... ok
+test_payload_cannot_override_tenant (test_api.APITests.test_payload_cannot_override_tenant) ... ok
+test_traversal_not_served (test_api.APITests.test_traversal_not_served) ... ok
+test_viewer_cannot_activate (test_api.APITests.test_viewer_cannot_activate) ... ok
+test_wrong_content_type (test_api.APITests.test_wrong_content_type) ... ok
+test_activate_then_replay (test_core.CoreTests.test_activate_then_replay) ... ok
+test_bad_batch_atomic (test_core.CoreTests.test_bad_batch_atomic) ... ok
+test_buckets_do_not_cross (test_core.CoreTests.test_buckets_do_not_cross) ... ok
+test_capacity_backpressure (test_core.CoreTests.test_capacity_backpressure) ... ok
+test_case_is_idempotent_and_scoped (test_core.CoreTests.test_case_is_idempotent_and_scoped) ... ok
+test_concurrent_retries (test_core.CoreTests.test_concurrent_retries) ... ok
+test_conflict_rolls_back_entire_batch (test_core.CoreTests.test_conflict_rolls_back_entire_batch) ... ok
+test_cross_tenant_replay_denied (test_core.CoreTests.test_cross_tenant_replay_denied) ... ok
+test_detection_tenant_isolation (test_core.CoreTests.test_detection_tenant_isolation) ... ok
+test_detector_independent_of_normalizer_progress (test_core.CoreTests.test_detector_independent_of_normalizer_progress) ... ok
+test_durable_restart (test_core.CoreTests.test_durable_restart) ... ok
+test_event_journey_scoped (test_core.CoreTests.test_event_journey_scoped) ... ok
+test_five_failures_alert_once (test_core.CoreTests.test_five_failures_alert_once) ... ok
+test_four_failures_do_not_alert (test_core.CoreTests.test_four_failures_do_not_alert) ... ok
+test_half_open_time_range (test_core.CoreTests.test_half_open_time_range) ... ok
+test_inactive_goes_to_quarantine (test_core.CoreTests.test_inactive_goes_to_quarantine) ... ok
+test_invalid_ip_preserved (test_core.CoreTests.test_invalid_ip_preserved) ... ok
+test_isolated_search (test_core.CoreTests.test_isolated_search) ... ok
+test_late_event_completes_bucket (test_core.CoreTests.test_late_event_completes_bucket) ... ok
+test_literal_search_not_sql (test_core.CoreTests.test_literal_search_not_sql) ... ok
+test_replay_bounded (test_core.CoreTests.test_replay_bounded) ... ok
+test_restart_does_not_repeat_alert (test_core.CoreTests.test_restart_does_not_repeat_alert) ... ok
+test_retry_idempotent (test_core.CoreTests.test_retry_idempotent) ... ok
+test_same_id_across_tenants (test_core.CoreTests.test_same_id_across_tenants) ... ok
+test_same_upstream_id_across_sources (test_core.CoreTests.test_same_upstream_id_across_sources) ... ok
+test_second_declarative_package (test_core.CoreTests.test_second_declarative_package) ... ok
+test_successes_do_not_count (test_core.CoreTests.test_successes_do_not_count) ... ok
+test_tenant_cannot_be_payload_selected (test_core.CoreTests.test_tenant_cannot_be_payload_selected) ... ok
+test_timezone_required (test_core.CoreTests.test_timezone_required) ... ok
+test_unsupported_query_rejected (test_core.CoreTests.test_unsupported_query_rejected) ... ok
+test_live_worker_cli_and_case_flow (test_runtime.RuntimeTests.test_live_worker_cli_and_case_flow) ... ok
+test_worker_retry_limit (test_runtime.RuntimeTests.test_worker_retry_limit) ... ok
+
+----------------------------------------------------------------------
+Ran 47 tests in 8.802s
+
+OK

@@ -1,0 +1,9 @@
+{
+  "Version":"2012-10-17",
+  "Statement":[
+    {"Effect":"Allow","Action":["s3:GetBucketVersioning","s3:GetBucketObjectLockConfiguration"],"Resource":"arn:aws:s3:::${BUCKET}"},
+    {"Effect":"Allow","Action":["s3:PutObject","s3:PutObjectRetention","s3:GetObject","s3:GetObjectVersion","s3:GetObjectRetention","s3:GetObjectLegalHold"],"Resource":"arn:aws:s3:::${BUCKET}/nova/*"},
+    {"Effect":"Allow","Action":"s3:PutObjectLegalHold","Resource":"arn:aws:s3:::${BUCKET}/nova/*","Condition":{"StringEquals":{"s3:object-lock-legal-hold":"ON"}}},
+    {"Effect":"Allow","Action":["kms:GenerateDataKey","kms:Decrypt"],"Resource":"${KMS_KEY_ARN}","Condition":{"StringEquals":{"kms:ViaService":"s3.${REGION}.amazonaws.com"}}}
+  ]
+}

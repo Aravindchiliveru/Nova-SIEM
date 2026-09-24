@@ -1,0 +1,8 @@
+{
+  "accepted_before_kill": 500,
+  "normalized_after_restart": 500,
+  "alerts": 1,
+  "uncommitted_transaction_rolled_back": true,
+  "integrity": "ok",
+  "scope": "process SIGKILL only; not power loss, disk failure, or distributed broker recovery"
+}
